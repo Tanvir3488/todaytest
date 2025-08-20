@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/child_nav_graph"
+    app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.tanvir3488.finaltest.ui.post.PostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_postDetails"
+            app:destination="@id/postDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetails"
+        android:name="com.tanvir3488.finaltest.ui.post_details.PostDetails"
+        android:label="fragment_post_details"
+        tools:layout="@layout/fragment_post_details" />
+</navigation>

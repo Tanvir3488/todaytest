@@ -2,7 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
-    id ("com.google.dagger.hilt.android")
+    id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -42,6 +43,11 @@ android {
 }
 
 dependencies {
+    // use latest stable
+    val nav_version = "2.8.0"
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation ("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation ("com.google.dagger:hilt-android:2.57")
     ksp ("com.google.dagger:hilt-compiler:2.57")
     implementation("androidx.hilt:hilt-navigation-fragment:1.2.0")
